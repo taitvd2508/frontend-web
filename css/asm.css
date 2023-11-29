@@ -1,0 +1,24 @@
+header {
+    position: relative;
+}
+
+header > p.text-muted {
+    position: absolute;
+}
+
+nav {
+    background: rgb(32, 30, 30);
+}
+
+nav div ul li a.nav1 {
+    color: lightgrey;
+}
+
+nav div ul li a.nav1:hover {
+    color: white;
+}
+
+nav div ul li a.nav1:focus{
+    color: white;
+}
+  

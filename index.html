@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Front-End FrameWorks TaiTVD250803</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!--fontawesome-->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/angular-route.js"></script>
+  <script src="js/script.js"></script>
+  <link rel="stylesheet" href="css/asm.css">
+</head>
+<body ng-app="myapp" ng-controller="myCtrl">
+  <div class="container">
+    <header class="row"> <!--class row: chia hàng-->
+      <img src="/images/banner.png" class="p-0">
+      <p class="text-muted">&copy TrinhVoDucTai_PS20669 - <a href="https://github.com/taitvd2508">Github: taitvd2508</a></p>
+    </header> <!--Header-->
+    <nav class="row">
+      <nav class="navbar navbar-expand-lg fw-bold">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav"> <!--me-auto cho các đối tượng căn trái-->
+            <li class="ms-2 nav-item active">
+              <a class="nav-link nav1" href="#!trangchu"><i class="fas fa-home"></i> Trang Chủ<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav1" href="#!gioithieu"><i class="fas fa-bookmark"></i> Giới thiệu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav1" href="#!lienhe"><i class="fas fa-phone-alt"></i> Liên hệ</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto me-2">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle nav1" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user-circle"></i> Tài khoản
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#!dangky"><i class="far fa-registered"></i> Đăng ký</a>
+                <a class="dropdown-item" href="#!dangnhap"><i class="fas fa-sign-in-alt"></i> Đăng nhập</a>
+                <a class="dropdown-item" href="#!quenmatkhau"><i class="fas fa-lock"></i> Quên mật khẩu</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="" ng-click="dangxuat()"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+                <a class="dropdown-item" href="#!doimatkhau"><i class="fas fa-exchange-alt"></i> Đổi mật khẩu</a>
+                <a class="dropdown-item" href="#!capnhattaikhoan"><i class="fas fa-user-edit"></i> Cập nhật tài khoản</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </nav>
+    <div class="row">
+      <article class="col-9 bg-light" ng-view></article>
+      <aside class="col-3 bg-light p-0">
+        <div class="card m1-n2 mr-n2">
+          <div class="card-header fw-bold text-white bg-primary"><i class="fas fa-list"></i> DANH MỤC MÔN HỌC</div>
+          <div class="card-body p-0">
+            <div class="listmonhoc" ng-include="'listmonhoc.html'"></div> <!--INCLUDE LIST CÁC MÔN HỌC-->
+          </div>
+          <button class="btn btn-primary mx-auto mt-2 mb-2 fw-bold" ng-click="xemthem()" id="xemthem"><i class="fas fa-caret-down"></i> Xem Thêm</button>
+          <button class="btn btn-primary mx-auto mt-2 mb-2 fw-bold" ng-click="thulai()" id="thulai" style="display: none"><i class="fas fa-caret-up"></i> Thu Lại</button>
+        </div>
+      </aside>
+    </div>
+    <footer class="row bg-warning">
+      <p class="text-center text-white fw-bold m-1">{{hoten}} <br> {{email}} </p>
+    </footer>
+  </div> <!--container-->
+</body>
+<script src="db/Students.js"></script>
+</html>

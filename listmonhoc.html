@@ -1,0 +1,13 @@
+<style>
+    a.hover:hover{
+        color: rgb(0, 102, 255);
+        text-shadow: 0px 0px 2px wheat ;
+        font-weight: bold;
+    }
+</style>
+<ul class="list-group">
+    <li class="list-group-item" ng-repeat="mh in listcacmonhoc|orderBy:'Name'|limitTo:pageSize:start">
+        <a href="#!thitracnghiem/{{mh.Id}}/{{mh.Name}}" class="nav-link hover">{{mh.Name|uppercase}}</a>
+        <!--khi nhấn vào tag a thì đường dẫn sẽ chuyển qua /id/name và thực hiện code script.js-->
+    </li>
+</ul>
