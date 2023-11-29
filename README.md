@@ -13,3 +13,16 @@ Trang chủ
 
 Đăng ký
 ![Đăng ký](./review/register.png)
+
+
+Làm bài trắc nghiệm
+![Thi TN](./review/thitn.png)
+
+
+Cập nhật tài khoản
+![Cập Nhật TK](./review/capnhattk.png)
+
+
+Đổi mật khẩu
+![Đổi mật khẩu](./review/doimk.png)
+
