@@ -6,8 +6,8 @@ Trang chủ
 
 
 Đăng nhập
-Username: trinhtai25
-Password: 123456
++ Username: trinhtai25
++ Password: 123456
 ![Đăng nhập](./review/login.png)
 
 Đăng ký
