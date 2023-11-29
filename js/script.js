@@ -37,6 +37,62 @@ app.controller("myCtrl", function($scope, $http, $rootScope, $location){
         document.getElementById("thulai").style.display = "none";
     }
 
+    // đăng ký
+    $scope.dangky = function(){
+        for(var i=0; i < listsv.length; i++){
+         if($scope.student.username == listsv[i].username) {
+             alert("Trùng Username ! Vui lòng nhập Username khác");
+             return false;
+         }else if($scope.student.password2 != $scope.student.password){
+             alert("Vui Lòng Nhập Đúng Mật Khẩu Xác Nhận !");
+             return false;
+         }else{
+             listsv.push(angular.copy($scope.student));
+             alert("Đăng ký thành công !");
+             $location.path('/dangnhap');
+             console.log(listsv);
+             return true;
+         }
+     }
+     }
+ 
+     $scope.dangxuat = function(){
+         $rootScope.dangnhapchua = "";
+         alert("Đã Đăng Xuất !");
+         $location.path('/dangnhap');
+         $rootScope.hoten = "";
+         $rootScope.email = "";
+     }
+ 
+     $rootScope.huy = function() {
+         $location.path('/trangchu');
+     }
+});
+
+// ĐĂNG NHẬP
+app.controller("dangnhapCtrl", function ($scope, $rootScope, $location) {
+    $scope.dangnhap = function () {
+        var user = $scope.user;
+        var password = $scope.pw;
+        var tc = false;
+        var motsv;
+        for (var i = 0; i < listsv.length; i++) {
+            motsv = listsv[i];
+            if (user == motsv.username && password == motsv.password) {
+                $rootScope.sinhvien_login = motsv; // gán thông tin của sv thứ "motsv" vào $rootScope.sinhvien_login để gọi qua chức năng đổi mật khẩu, cap nhat tai khoan
+                tc = true;
+                break;
+            }//đóng if
+        } // đóng for
+        if (tc) { // nếu đúng username và password cho $rootScope.dangnhapchua = "roi" để biết khi có giá trị là "roi" thì là đã đăng nhập   
+            $rootScope.dangnhapchua = "roi";
+            alert("Đăng nhập thành công !");
+            $location.path('/trangchu');
+            console.log(listsv);
+        } else {
+            alert("Đăng nhập thất bại ! Vui lòng nhập đúng Username & Password");
+        }
+    }
 });
 
 

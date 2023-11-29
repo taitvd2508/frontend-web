@@ -1,0 +1,61 @@
+<form name="formDangKy" class="col-8 p-0 m-auto border border-success mt-5 shadow rounded mb-5">
+    <div class="bg-success p-2 text-center text-white h5 fw-bold">ĐĂNG KÝ TÀI KHOẢN</div>
+    <div class="p-3">
+        <hr>
+        <div class="form-group mb-3">
+            <img src="/images/registerr.png" class="mx-auto d-block w-25">
+            <!--mx-auto: canh giữa, nếu nằm trong class row thì phải thêm d-block-->
+        </div>
+        <div class="form-group mb-3">
+            <input type="text" ng-model="student.username" name="txtUser" minlength="4" maxlength="12" required
+                id="user" class="form-control" placeholder="Tên đăng nhập">
+            <small ng-show="formDangKy.txtUser.$invalid" class="fw-bold text-danger"><i
+                    class="fas fa-exclamation-triangle"></i> Tên đăng nhập phải từ 4-12 kí tự !</small>
+        </div>
+        <div class="form-group mb-3">
+            <input type="password" ng-model="student.password" name="txtPass" minlength="6" maxlength="12" required
+                id="password" class="form-control" placeholder="Mật khẩu">
+            <small ng-show="formDangKy.txtPass.$invalid" class="fw-bold text-danger"><i
+                    class="fas fa-exclamation-triangle"></i> Mật khẩu phải từ 6-12 kí tự !</small>
+        </div>
+        <div class="form-group mb-3">
+            <input type="password" ng-model="student.password2" name="txtPass2" minlength="6" maxlength="12" required
+                id="password2" class="form-control" placeholder="Nhập lại mật khẩu">
+            <small ng-show="formDangKy.txtPass2.$invalid" class="fw-bold text-danger"><i
+                    class="fas fa-exclamation-triangle"></i> Mật khẩu phải từ 6-12 kí tự !</small>
+        </div>
+        <div class="form-group mb-3">
+            <input type="text" ng-model="student.fullname" name="txtFullName" required id="fullname"
+                class="form-control" placeholder="Họ và tên">
+            <small ng-show="formDangKy.txtFullName.$invalid" class="fw-bold text-danger"><i
+                    class="fas fa-exclamation-triangle"></i> Vui lòng nhập họ và tên !</small>
+        </div>
+        <div class="form-group mb-3">
+            <input type="email" ng-model="student.email" name="txtEmail" required id="email" class="form-control"
+                placeholder="email@example.com">
+            <small ng-show="formDangKy.txtEmail.$invalid" class="fw-bold text-danger"><i
+                    class="fas fa-exclamation-triangle"></i> Vui lòng nhập đúng định dạng email !</small>
+        </div>
+        <div class="form-group mb-3">
+            <input type="date" ng-model="student.birthday" name="txtDate" required id="date" class="form-control"
+                placeholder="Ngày sinh">
+            <small ng-show="formDangKy.txtDate.$invalid" class="fw-bold text-danger"><i
+                    class="fas fa-exclamation-triangle"></i> Vui lòng nhập đúng định dạng ngày sinh dd/mm/yyyy !</small>
+        </div>
+        <div class="form-group mb-3">
+            <label for="gioitinh" class="ms-1">Giới tính:</label>
+            <input type="radio" ng-model="student.gender" id="nam" name="txtNamNu" required value="true"
+                class="ml-2 form-check-input">
+            <label for="nam">Nam</label>
+            <input type="radio" ng-model="student.gender" id="nu" name="txtNamNu" required value="false"
+                class="ml-2 form-check-input">
+            <label for="nu">Nữ</label><br>
+            <small ng-show="formDangKy.txtNamNu.$invalid" class="fw-bold text-danger"><i
+                    class="fas fa-exclamation-triangle"></i> Vui lòng chọn giới tính !</small>
+        </div>
+        <div class="row">
+            <button name="btn-register" class="btn btn-primary fs-5 col-3 mx-auto fw-bold" ng-click="dangky()"
+                ng-disabled="formDangKy.$invalid"><i class="far fa-registered"></i> Đăng ký</button>
+        </div>
+    </div>
+</form>

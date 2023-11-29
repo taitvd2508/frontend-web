@@ -1,0 +1,45 @@
+<form name="formDangNhap" class="col-8 p-0 m-auto border border-success mt-5 mb-5 shadow rounded">
+    <div class="bg-success p-2 text-center text-white h5 fw-bold">THÀNH VIÊN ĐĂNG NHẬP</div>
+    <div class="p-3">
+        <hr>
+        <div class="form-group row mb-3">
+            <label for="user" class="col-2 col-form-label">Username</label>
+            <div class="col-10"">
+                        <input type=" text" id="user" name="txtUser" ng-model="user" minlength="4" maxlength="12"
+                class="form-control" placeholder="Nhập Username">
+                <small ng-show="formDangNhap.txtUser.$invalid" class="fw-bold text-danger"><i
+                        class="fas fa-exclamation-triangle"></i> Tên đăng nhập phải từ 4-12 kí tự !</small>
+            </div>
+        </div>
+        <div class="form-group row mb-3">
+            <label for="password" class="col-2 col-form-label">Password</label>
+            <div class="col-10">
+                <input type="password" id="password" name="txtPass" ng-model="pw" minlength="6" maxlength="12"
+                    class="form-control" placeholder="Nhập Password">
+                <small ng-show="formDangNhap.txtPass.$invalid" class="fw-bold text-danger"><i
+                        class="fas fa-exclamation-triangle"></i> Mật khẩu phải từ 6-12 kí tự !</small>
+            </div>
+        </div>
+        <div class="form-group row mb-3">
+            <p class="col-form-label col-2"></p>
+            <div class="col-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="checkbox" id="ghinho">
+                    <label for="ghinho">Ghi nhớ ?</label><br>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row mb-3">
+            <label class="col-2 col-form-label"></label>
+            <div class="col-10">
+                <small>Bạn Chưa Có Tải Khoản ? <a href="index.html#!/dangky" class="fw-bold"> Tạo Tài Khoản</a></small>
+            </div>
+        </div>
+        <div class="form-group row">
+            <p class="col-form-label col-2"></p>
+            <div class="col-10">
+                <button class="btn btn-primary fw-bold" ng-click="dangnhap()" ng-disabled="formDangNhap.$invalid || formDangNhap.$pristine"><i class="fas fa-sign-in-alt"></i> Đăng Nhập</button>
+            </div>
+        </div>
+    </div>
+</form>
