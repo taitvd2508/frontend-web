@@ -1,0 +1,40 @@
+<div class="col-10 m-auto">
+    <div class="card mt-3" ng-repeat="ch in caccauhoi | limitTo: pageSize:start">
+        <div class="card-header">
+            <h5 class="fw-bold"><i class="fas fa-th-list"></i> {{tenMH}} <span class="badge text-bg-primary float-end">{{sophut}}:{{sogiay}}</span></h5>
+        </div>
+        <div class="card-body">
+            <p class="card-title">
+            <h6 class="fw-bold text-danger">{{st}}: {{ch.Text}}</h6>
+            </p>
+            <hr>
+            <p class="card-text" ng-repeat="as in ch.Answers">
+                <input type="radio" name="as" value="as.Id">
+                <label>{{as.Text}}</label>
+            </p>
+        </div>
+        <div class="card-footer text-muted pb-1">
+            <h5>Điểm: {{ch.Marks}}</h5>
+        </div>
+    </div>
+</div>
+    <div>
+        <ul class="pagination justify-content-center" id="myTab" role="tablist">
+            <li class="page-item">
+              <a class="page-link text-black" ng-click="first()"><i class="fas fa-step-backward"></i></a>
+            </li>
+            <li class="page-item nav-item">
+              <a class="page-link text-black" ng-click="prev()"><i class="fas fa-angle-double-left"></i></a>
+            </li>
+            <li class="page-item">
+              <a class="page-link bg-info fw-bold text-black">{{st}}/{{tongst}}</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link text-black" ng-click="next()"><i class="fas fa-angle-double-right"></i></a>
+            </li>
+            <li class="page-item">
+              <a class="page-link text-black" ng-click="last()"><i class="fas fa-step-forward"></i></a>
+            </li>
+          </ul>
+    </div>
+</div>

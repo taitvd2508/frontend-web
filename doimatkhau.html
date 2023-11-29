@@ -1,0 +1,32 @@
+<form name="formDoiMatKhau" class="col-8 p-0 m-auto border border-success mt-5 mb-5 shadow rounded">
+    <div class="bg-success p-2 text-center text-white h5 fw-bold">ĐỔI MẬT KHẨU</div>
+    <div class="p-3">
+        <hr>
+        <div class="form-group mb-3">
+            <label for="user" class="col-form-label">Mật khẩu hiện tại</label>
+            <input type="password" ng-model="student.password" name="txtPass" minlength="6" maxlength="12" required
+                id="password" class="form-control" placeholder="Nhập mật khẩu hiện tại">
+            <small ng-show="formDoiMatKhau.txtPass.$invalid" class="fw-bold text-danger"><i
+                    class="fas fa-exclamation-triangle"></i> Mật khẩu phải từ 6-12 kí tự !</small>
+        </div>
+        <div class="form-group mb-3">
+            <label for="user" class="col-form-label">Mật khẩu mới</label>
+            <input type="password" ng-model="student.password_new" name="txtPass_New" minlength="6" maxlength="12"
+                required id="password_new" class="form-control" placeholder="Nhập mật khẩu mới">
+            <small ng-show="formDoiMatKhau.txtPass_New.$invalid" class="fw-bold text-danger"><i
+                    class="fas fa-exclamation-triangle"></i> Mật khẩu mới phải từ 6-12 kí tự !</small>
+        </div>
+        <div class="form-group mb-3">
+            <label for="user" class="col-form-label">Nhập lại mật khẩu</label>
+            <input type="password" ng-model="student.password_new2" name="txtPass_New2" minlength="6" maxlength="12"
+                required id="password_new2" class="form-control" placeholder="Nhập lại mật khẩu">
+            <small ng-show="formDoiMatKhau.txtPass_New2.$invalid" class="fw-bold text-danger"><i
+                    class="fas fa-exclamation-triangle"></i> Mật khẩu xác nhận phải từ 6-12 kí tự !</small>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary fw-bold" ng-click="doimatkhau()" ng-disabled="formDoiMatKhau.$invalid"><i
+                    class="fas fa-edit"></i> Cập nhật mật khẩu</button>
+            <button class="btn btn-danger fw-bold" ng-click="huy()"><i class="fas fa-window-close"></i> Hủy</button>
+        </div>
+    </div>
+</form>

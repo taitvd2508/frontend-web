@@ -1,0 +1,46 @@
+<body>
+    <form name="formCapNhat" class="col-8 p-0 m-auto border border-success mt-5 mb-5 shadow rounded">
+        <div class="bg-success p-2 text-center text-white h5 fw-bold">CẬP NHẬT TÀI KHOẢN</div>
+        <div class="p-3">
+            <hr>
+            <div class="form-group mb-3">
+                <label>Họ Và Tên</label>
+                <input type="text" ng-model="student.fullname" name="txtFullName" required id="fullname" class="form-control" placeholder="Nhập Họ Và Tên">
+                <small ng-show="formCapNhat.txtFullName.$invalid" class="fw-bold text-danger"><i class="fas fa-exclamation-triangle"></i> Vui lòng nhập họ và tên !</small>
+            </div>
+            <div class="form-group mb-3">
+                <label>Email</label>
+                <input type="email" ng-model="student.email" name="txtEmail" required id="email" class="form-control" placeholder="Nhập Email Mới">
+                <small ng-show="formCapNhat.txtEmail.$invalid" class="fw-bold text-danger"><i class="fas fa-exclamation-triangle"></i> Vui lòng nhập đúng định dạng email !</small>
+            </div>
+            <div class="form-group mb-3">
+                <label>Ngày sinh</label>
+                <input type="date" ng-model="student.birthday" name="txtDate" required id="date" class="form-control" placeholder="Ngày sinh">
+                <small ng-show="formCapNhat.txtDate.$invalid" class="fw-bold text-danger"><i class="fas fa-exclamation-triangle"></i> Vui lòng nhập đúng định dạng ngày sinh dd/mm/yyyy !</small>
+            </div>
+            <div class="form-group mb-3">
+                <label>Học phí</label>
+                <input type="number" ng-model="student.schoolfee" name="txtHocPhi" min="0" max="10000000" required id="hocphi" class="form-control" placeholder="Nhập Học Phí">
+                <small ng-show="formCapNhat.txtHocPhi.$invalid" class="fw-bold text-danger"><i class="fas fa-exclamation-triangle"></i> Vui lòng nhập học phí từ 0 - 10.000.000 VNĐ !</small>
+            </div>
+            <div class="form-group mb-3">
+                <label>Điểm</label>
+                <input type="number" ng-model="student.marks" name="txtDiem" min="0" max="10" required id="diem" class="form-control" placeholder="Nhập Điểm">
+                <small ng-show="formCapNhat.txtDiem.$invalid" class="fw-bold text-danger"><i class="fas fa-exclamation-triangle"></i> Vui lòng nhập điểm phí từ 0 - 10 !</small>
+            </div>
+            <div class="form-group mb-3">
+                <label for="gioitinh" class="ms-1">Giới tính:</label>
+                <input type="radio" ng-model="student.gender" name="txtNamNu" required id="nam" value="true" class="ml-2 form-check-input">
+                <label for="nam">Nam</label>
+                <input type="radio" ng-model="student.gender" name="txtNamNu" required id="nu" value="false" class="ml-2 form-check-input">
+                <label for="nu">Nữ</label><br>
+                <small ng-show="formCapNhat.txtNamNu.$invalid" class="fw-bold text-danger"><i class="fas fa-exclamation-triangle"></i> Vui lòng chọn giới tính !</small>
+            </div>
+            <div class="">
+                <button class="btn btn-primary fw-bold" ng-click="capnhat()" ng-disabled="formCapNhat.$invalid"><i class="fas fa-user-edit"></i> Cập nhật thông tin</button>
+                <button class="btn btn-danger fw-bold" ng-click="huy()"><i class="fas fa-window-close"></i> Hủy</button>
+                <button class="btn btn-success fw-bold" ng-click="edit()"><i class="far fa-eye"></i> Hiện thông tin cũ</button>
+            </div>
+        </div>
+    </form>
+</body>
